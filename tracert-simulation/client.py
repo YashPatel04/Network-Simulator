@@ -31,7 +31,7 @@ def traceroute(dest ,host='localhost', port=3000, max_hops=30):
                         rtts[j] = f"{int(rtt*1000)}ms"
                 except socket.timeout:
                     timeout = True
-        if timeout and all(rtt == "*" for rtt in rtts):
+        if timeout and all(rtt == "*   " for rtt in rtts):
             print(f"{i+1}   Request Timed Out    *   *")
         else:
             print(f"{i+1}    {dest_ip}:{port}    {rtts[0]}   {rtts[1]}")
